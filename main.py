@@ -5,7 +5,7 @@ def faceBox(faceNet , frame):
     frameWidth = frame.shape[1]
     blob = cv2.dnn.blobFromImage(frame , 1.0 , (227,227) , [104,117,123] ,  swapRB = False )  #pyimagesearch.com
     faceNet.setInput(blob)
-    detection = faceNet.forward()
+    detection = faceNet.forward() 
     bboxs = []
     for i in range (detection.shape[2]):
         confidence = detection[0,0,i,2]
@@ -67,4 +67,5 @@ while True:
     
 video.release()
 cv2.destroyAllWindows()
+#newly added
     
